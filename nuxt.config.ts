@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
     googleFonts: {
         families: {
-            Poppins: true
+            Poppins: [400, 500, 600, 700]
         }
     }
 })

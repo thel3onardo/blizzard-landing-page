@@ -1,4 +1,10 @@
+
 <template>
-    <h1 class="text-red-500 font-poppins">Olá</h1>
-    <h3 class="text-green-500">Meu nome é leonardo de Oliveira da Silva</h3>
+    <Head>
+        <Title>Blizzard</Title>
+    </Head>
+
+    <div class="w-full bg-red-500 font-poppins">
+        <NavBar />
+    </div>
 </template>
