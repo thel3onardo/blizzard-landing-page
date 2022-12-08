@@ -1,3 +1,3 @@
 <template>
-    <h1>Olá</h1>
+    <h1 class="text-red-500">Olá</h1>
 </template>
