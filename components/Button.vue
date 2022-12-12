@@ -14,8 +14,8 @@
 <template>
     <button 
         :class="props.background ? 'bg-blue-500' : 'bg-transparent border border-white'"
-        class="text-white text-sm font-medium  rounded-[3px]"
+        class="text-white text-sm font-medium rounded-[3px]"
     >
-        <slot></slot>
+        <slot />
     </button>
 </template>
