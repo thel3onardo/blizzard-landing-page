@@ -24,7 +24,10 @@ const state = reactive({
                 </div>
                 <div class="flex">
                     <Button class="px-4 py-2 mr-4">Criar conta</Button>
-                    <Button class="px-6 py-2" background>Logar</Button>
+                    <Button class="px-6 py-2" background>
+                        <Icon name="mdi:account-outline" />
+                        Logar
+                    </Button>
                 </div>
             </div>
         </NuxtLayout>
