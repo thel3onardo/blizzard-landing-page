@@ -6,10 +6,11 @@ const headerItems = reactive([
 
 <template>
     <div 
-        :style="{ backgroundImage: `url('/banner-hero/games/diablo-bg.png')` }" class="w-full max-h-[736px] h-screen flex items-center justify-center bg-no-repeat bg-top bg-cover bg-opacity-50 header-bg z-10 relative"
+        :style="{ backgroundImage: `url('/banner-hero/games/diablo-bg.png')` }" class="flex flex-col w-full max-h-[736px] h-screen bg-no-repeat bg-top bg-cover bg-opacity-50 header-bg z-10 relative"
     >
+        <NavBar />
         <NuxtLayout name="content">
-            <div class="flex justify-between w-full relative z-30">
+            <div class="flex items-center justify-between w-full relative z-30 mt-12">
                 <div class="flex">
                     <ul class="flex flex-col justify-center mr-40">
                         <li class="h-12 w-12 mb-5" v-for="item in headerItems" :key="item.id">
@@ -46,6 +47,6 @@ const headerItems = reactive([
     width: 100%;
     height: 100%;
     background: radial-gradient(73.1% 73.1% at 52.6% 25.14%, rgba(2, 2, 3, 0) 0%, #020203 71.1%);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 </style>

@@ -5,9 +5,9 @@ const state = reactive({
 </script>
 
 <template>
-    <div class="w-full bg-transparent fixed z-40">
+    <div class="w-full bg-transparent sticky z-40 border-b-[1.5px] border-white/10">
         <NuxtLayout name="content">
-            <div class="flex justify-between py-7 px-5">
+            <div class="flex justify-between py-7 px-5 relative navbar-border-bottom">
                 <div class="flex items-center">
                     <div class="lg:mr-32">
                         <img src="~/assets/logo-blizzard.png">
@@ -30,3 +30,14 @@ const state = reactive({
         </NuxtLayout>
     </div>
 </template>
+
+<style scoped>
+.navbar-border-bottom::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 3%;
+    height: 2px;
+    background-color: #00AEFF;
+}
+</style>
