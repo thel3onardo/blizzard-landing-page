@@ -25,7 +25,7 @@ const state = reactive({
                 <div class="flex">
                     <Button class="px-4 py-2 mr-4">Criar conta</Button>
                     <Button class="px-6 py-2" background>
-                        <Icon name="mdi:account-outline" />
+                        <Icon name="line-md:account" />
                         Logar
                     </Button>
                 </div>
