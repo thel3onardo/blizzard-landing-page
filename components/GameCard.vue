@@ -16,11 +16,11 @@
 </script>
 
 <template>
-  <div class="flex flex-col text-white">
+  <div class="flex flex-col text-white group">
     <div class="w-full rounded-lg overflow-hidden lg:max-h-[400px]">
-        <img :src="imagePath" class="w-full h-full object-cover">
+        <img :src="imagePath" class="w-full h-full object-cover group-hover:scale-110 group-hover:cursor-pointer game-card__img transition duration-500 delay-50 relative">
     </div>
-    <h2 class="font-semibold text-lg mt-6">{{ title }}</h2>
+    <h2 class="font-semibold text-lg mt-6 group-hover:text-blue-500">{{ title }}</h2>
     <p class="font-normal text-sm opacity-80 mt-1">{{ genre }}</p>
   </div>
 </template>

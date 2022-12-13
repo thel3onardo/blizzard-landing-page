@@ -14,14 +14,23 @@ const games = reactive([
             <div class="flex justify-between items-end text-white my-20">
                 <h4 class="text-semibold">Games</h4>
                 <h1 class="text-bold text-3xl">Jogos exclusivos</h1>
-                <div class="flex text-blue-500">
+                <div class="flex items-center text-blue-500">
                     <Icon name="radix-icons:drag-handle-dots-2" />
-                    <span class="text-semibold">Ver todos os jogos</span>
+                    <span class="text-semibold ml-2">Ver todos os jogos</span>
                 </div>
             </div>
 
             <div class="grid grid-cols-4 gap-8">
                 <GameCard v-for="game in games" :key="game.id" :title="game.title" :genre="game.genre" :imagePath="game.imagePath" />
+                <div class="w-full lg:max-h-[400px] border-[1.5px] rounded flex flex-col justify-center items-center">
+                    <div>
+                        <img src="/logo-blizzard.png" />
+                    </div>
+                    <div class="text-white flex items-center mt-8">
+                        <Icon name="radix-icons:drag-handle-dots-2" />
+                        <p class="font-semibold ml-2">Ver todos os jogos</p>
+                    </div>
+                </div>
             </div>
         </div>
     </NuxtLayout>
