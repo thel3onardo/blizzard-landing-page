@@ -2,7 +2,7 @@
 import Header from '../components/sections/Header.vue'
 import Games from '../components/sections/Games.vue'
 
-const { data : gamesReq } = await useFetch('/api/games');
+const { data : gamesReq } = await useFetch('/api/games?limit=11');
 
 </script>
 
