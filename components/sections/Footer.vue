@@ -4,7 +4,7 @@ const listItems = reactive([
     { id: 2, icon: '/footer/2.svg', label: 'Conecte-se aos seus amigos' },
     { id: 3, icon: '/footer/3.svg', label: 'Compare jogos e itens digitais' },
 ])
-const userOS = ref();
+const userOS = ref({ name: '', icon: '' });
 
 onMounted(() => {
     userOS.value = getUserOS();
@@ -14,11 +14,11 @@ function getUserOS() {
     const userAgentData = window.navigator.userAgent;
 
     if (userAgentData?.includes('Linux')) {
-        return 'Linux'
+        return { name: 'Linux', icon: 'uiw:linux' }
     } else if (userAgentData?.includes('Win')) {
-        return 'Windows'
+        return { name: 'Windows', icon: 'ri:windows-fill' }
     } else if (userAgentData?.includes('Mac')) {
-        return 'MacOS'
+        return { name: 'MacOS', icon: 'ic:baseline-apple' }
     }
 }
 </script>
@@ -44,8 +44,8 @@ function getUserOS() {
                     <div class="flex flex-col w-fit">
                         <div class="my-10">
                             <Button class="px-8 py-3.5 flex items-center" background>
-                                <Icon name="ic:baseline-apple" size="24px" class="mr-1.5" />
-                                <span class="font-semibold text-base">Baixar para {{ userOS }}</span>
+                                <Icon :name="userOS.icon" size="24px" class="mr-1.5" />
+                                <span class="font-semibold text-base">Baixar para o {{ userOS.name }}</span>
                             </Button>
                         </div>
                         <div class="flex items-center text-white mt-3">
