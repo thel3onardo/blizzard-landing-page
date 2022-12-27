@@ -1,9 +1,26 @@
 <script setup>
-const listItems = ref([
+const listItems = reactive([
     { id: 1, icon: '/footer/1.svg', label: 'Seus jogos em um só lugar' },
     { id: 2, icon: '/footer/2.svg', label: 'Conecte-se aos seus amigos' },
     { id: 3, icon: '/footer/3.svg', label: 'Compare jogos e itens digitais' },
 ])
+const userOS = ref();
+
+onMounted(() => {
+    userOS.value = getUserOS();
+})
+
+function getUserOS() {
+    const userAgentData = window.navigator.userAgent;
+
+    if (userAgentData?.includes('Linux')) {
+        return 'Linux'
+    } else if (userAgentData?.includes('Win')) {
+        return 'Windows'
+    } else if (userAgentData?.includes('Mac')) {
+        return 'MacOS'
+    }
+}
 </script>
 
 <template>
@@ -28,7 +45,7 @@ const listItems = ref([
                         <div class="my-10">
                             <Button class="px-8 py-3.5 flex items-center" background>
                                 <Icon name="ic:baseline-apple" size="24px" class="mr-1.5" />
-                                <span class="font-semibold text-base">Baixar para o MACOS</span>
+                                <span class="font-semibold text-base">Baixar para {{ userOS }}</span>
                             </Button>
                         </div>
                         <div class="flex items-center text-white mt-3">
