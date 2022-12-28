@@ -1,11 +1,5 @@
 <script setup lang="ts">
-defineProps({
-    games: {
-        type: Array,
-        required: true,
-        default: [],
-    }
-})
+const { loading, data: games } = useFetch('')
 </script>
 
 <template>
@@ -20,7 +14,7 @@ defineProps({
                 </div>
             </div>
 
-            <div v-if="games" class="grid lg:grid-cols-4 md:grid-cols-3 gap-8">
+            <div v-if="games" class="grid lg:grid-cols-4 md:grid-cols-3 gap-8 mb-20">
                 <GameCard v-for="game in games" :key="game.id" :title="game.title" :genre="game.genre" :imagePath="game.imagePath" />
                 <div class="w-full lg:max-h-[400px] border-[1.5px] rounded flex flex-col justify-center items-center">
                     <div>

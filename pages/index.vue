@@ -1,8 +1,7 @@
 <script setup>
 import Header from '../components/sections/Header.vue'
 import Games from '../components/sections/Games.vue'
-
-const { data : gamesReq } = await useFetch('/api/games?limit=11');
+import Footer from '../components/sections/Footer.vue'
 
 </script>
 
@@ -13,6 +12,7 @@ const { data : gamesReq } = await useFetch('/api/games?limit=11');
 
     <div class="w-full font-poppins bg-black">
         <Header />
-        <Games :games="gamesReq.games" />
+        <Games />
+        <Footer />
     </div>
 </template>
