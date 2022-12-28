@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const headerItems = reactive([
-    { id: 1, path: '/banner-hero/icons/game-1.png' }, { id: 2, path: '/banner-hero/icons/game-2.png' }, { id: 3, path: '/banner-hero/icons/game-3.png' }, { id: 4, path: '/banner-hero/icons/game-4.png' }, { id: 5, path: '/banner-hero/icons/game-5.png' }
+    { id: 1, path: 'game-1.png' }, { id: 2, path: 'game-2.png' }, { id: 3, path: 'game-3.png' }, { id: 4, path: 'game-4.png' }, { id: 5, path: 'game-5.png' }
 ])
 </script>
 
 <template>
     <div 
-        :style="{ backgroundImage: `url('/banner-hero/games/diablo-bg.png')` }" class="flex flex-col w-full max-h-[736px] h-screen bg-no-repeat bg-top header-bg z-10 relative"
+        :style="{ backgroundImage: `url('/banner-hero/games/diablo-bg.png')` }" class="flex flex-col w-full max-h-[736px] h-screen bg-no-repeat bg-top bg-cover header-bg z-10 relative"
     >
         <NavBar />
         <NuxtLayout name="content">
@@ -14,7 +14,7 @@ const headerItems = reactive([
                 <div class="flex">
                     <ul class="flex flex-col justify-center mr-40">
                         <li class="h-12 w-12 mb-5" v-for="item in headerItems" :key="item.id">
-                            <img :src="item.path" class="h-full w-full">
+                            <img :src="`/banner-hero/icons/${item.path}`" class="h-full w-full">
                         </li>
                     </ul>
                     <div class="flex flex-col text-white max-w-[560px]">

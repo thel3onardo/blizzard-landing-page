@@ -1,9 +1,12 @@
-<script setup lang="ts">
-const { loading, data: games } = useFetch('')
+<script setup>
+const { pending, data } = await useFetch('https://api.brchallenges.com/api/blizzard/games', { method: 'GET' });
 </script>
 
 <template>
-    <NuxtLayout name="content">
+    <template v-if="pending">
+        <p>pending</p>
+    </template>
+    <NuxtLayout name="content" v-else>
         <div class="flex flex-col">
             <div class="flex justify-between items-end text-white my-20">
                 <h4 class="text-semibold">Games</h4>
@@ -14,8 +17,8 @@ const { loading, data: games } = useFetch('')
                 </div>
             </div>
 
-            <div v-if="games" class="grid lg:grid-cols-4 md:grid-cols-3 gap-8 mb-20">
-                <GameCard v-for="game in games" :key="game.id" :title="game.title" :genre="game.genre" :imagePath="game.imagePath" />
+            <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-8 mb-20">
+                <GameCard v-for="{ name, category, image, logo } in data" :key="name" :title="name" :category="category" :background="image" :logo="logo" />
                 <div class="w-full lg:max-h-[400px] border-[1.5px] rounded flex flex-col justify-center items-center">
                     <div>
                         <img src="/logo-blizzard.png" />
