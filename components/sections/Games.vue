@@ -1,5 +1,6 @@
 <script setup>
-const { pending, data } = await useFetch('https://api.brchallenges.com/api/blizzard/games', { method: 'GET' });
+const appConfig = useAppConfig();
+const { pending, data } = await useFetch(appConfig?.api?.games, { method: 'GET' });
 </script>
 
 <template>
@@ -13,7 +14,7 @@ const { pending, data } = await useFetch('https://api.brchallenges.com/api/blizz
                 <h1 class="text-bold text-3xl">Jogos exclusivos</h1>
                 <div class="flex items-center text-blue-500">
                     <Icon name="radix-icons:drag-handle-dots-2" />
-                    <span class="text-semibold ml-2">Ver todos os jogos</span>
+                    <span class="extt-semibold ml-2">Ver todos os jogos</span>
                 </div>
             </div>
 
